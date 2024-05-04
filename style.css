@@ -1,0 +1,102 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: hsl(0, 0%, 10%);
+    font-family: Arial, sans-serif;
+}
+
+.progress-box {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+#progress-bar {
+    background-image: repeating-linear-gradient(
+    135deg,
+    hsl(64, 83%, 66%) 0px,
+    hsl(64, 83%, 66%) 6px,
+    hsl(109, 83%, 66%) 6px,
+    hsl(109, 83%, 66%) 12px,
+    hsl(154, 83%, 66%) 12px,
+    hsl(154, 83%, 66%) 18px,
+    hsl(199, 83%, 66%) 18px,
+    hsl(199, 83%, 66%) 24px,
+    hsl(244, 83%, 66%) 24px,
+    hsl(244, 83%, 66%) 30px,
+    hsl(289, 83%, 66%) 30px,
+    hsl(289, 83%, 66%) 36px,
+    hsl(334, 83%, 66%) 36px,
+    hsl(334, 83%, 66%) 42px,
+    hsl(19, 83%, 66%) 42px,
+    hsl(19, 83%, 66%) 48px
+  );
+    position: absolute;
+    height: 5px;
+    width: 0px;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 0;
+    z-index: 0;
+    transition: 0.4s ease;
+}
+
+.circle {
+    background-color: hsl(0, 0%, 10%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid hsl(0, 0%, 25%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: border 0.4s ease;
+    z-index: +1;
+}
+
+.circle.active {
+    border: 3px solid hsl(206, 72%, 60%);
+}
+
+.bar {
+    background-color: hsl(0, 0%, 20%);
+    height: 5px;
+    width: 90px;
+    z-index: -1px;
+}
+
+.progress-button {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    margin: 5px;
+    padding: 8px 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    background-color: hsl(206, 72%, 60%);
+    font-family: inherit;
+    
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn:disabled {
+    background-color: hsl(0, 0%, 20%);
+    cursor: not-allowed;
+}
